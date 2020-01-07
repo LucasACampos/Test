@@ -1,0 +1,98 @@
+* {
+	margin: 0px;
+	font-family: arial;
+}
+
+body {
+	background: #5b5689;
+	padding: 0px;
+}
+
+#menu {
+	height: 8vh;
+	margin: 0px;
+	box-shadow: 0 2px 8px 0 black;
+	background: white;
+}
+
+#logo {
+	height: 7vh;
+	margin-top: 0.5vh;
+	margin-left: 10px;
+}
+
+#content {
+	background: white;
+	margin: 2.5vw;
+}
+
+#cartorios {
+	margin-left: 20vw;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+
+#tabela {
+	
+}
+
+table {
+	table-layout: fixed;
+	border: solid;
+	border-color: black;
+	height: 40%;
+	margin: 3%;
+	font-family: 'Lato', sem serifa;
+	font-size: 100%;
+	border-spacing: 0;
+	width: 94%;
+	border: 1px solid #ddd;
+	overflow-x: hidden;
+}
+
+.rolagem{
+	overflow: auto;
+	overflow-x: auto;
+	border-width: 1px;
+	height: 85%;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+#tableNome{
+	width: 70%;
+}
+
+.cartorio {
+	background: white;
+	border: 1px solid black;
+	border-radius: 6px;
+}
+
+#criacaoEEdicaoDeCartorio {
+	width: 42vw;
+	height: 25vh;
+	margin-top: 20vh;
+	position: fixed;
+	 text-align:center;
+}
+
+#visializacaoDosCartorios {
+	float: right;
+	width: 48vw;
+	height: 80vh;
+}
+#editar{
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+form {
+	margin-top:20px;
+}

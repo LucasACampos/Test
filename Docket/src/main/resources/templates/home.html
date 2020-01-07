@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<title>Cartorios</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' type='text/css' media='screen'
+	th:href="@{/css/home.css}">
+<script th:src="@{/js/home.js}"></script>
+</head>
+<body>
+	<div id="menu">
+		<img id="logo" alt="" th:src="@{img/docket-brasil.svg}">
+	</div>
+	<div id="content">
+		<div id="visializacaoDosCartorios" class="cartorio">
+			<h2 id="cartorios">Cartorios</h2>
+			<div class="rolagem">
+				<table id="tabela">
+					<thead>
+						<tr>
+							<th id="tableNome">Nome</th>
+							<th>Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cartorio : ${listaDeCartorios}">
+							<td th:text="${cartorio.nome}"></td>
+							<td colspan="2"><a
+								th:href="@{/cartorio/editar/{id} (id = ${cartorio.id})}">
+									<button>Editar</button>
+							</a> <a th:href="@{/cartorio/excluir/{id} (id = ${cartorio.id})}">
+									<button>Excluir</button>
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="criacaoEEdicaoDeCartorio" class="cartorio">
+			<h2 id="editar"
+				th:text="${cartorio.nome == null} ? 'Criar Cartorio' : 'Editar Cartorio'"></h2>
+			<form id="form" th:action="@{/cartorio/salvar}" th:object="${cartorio}"
+				method="POST">
+				<input type="text" required="required" th:field="*{nome}"> <input
+					type="hidden" th:field="*{id}"> <input class="button" type="submit"
+					th:value="${cartorio.nome == null} ? Salvar : Editar"> <a
+					th:href="@{/}"> <input class="button" th:if="${cartorio?.nome != null}"
+					type="button" th:value="Cancelar">
+				</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
